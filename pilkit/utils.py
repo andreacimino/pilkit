@@ -239,15 +239,17 @@ class quiet(object):
 
     """
     def __enter__(self):
-        self.stderr_fd = sys.__stderr__.fileno()
-        self.null_fd = os.open(os.devnull, os.O_RDWR)
-        self.old = os.dup(self.stderr_fd)
-        os.dup2(self.null_fd, self.stderr_fd)
+      pass
+       # self.stderr_fd = sys.__stderr__.fileno()
+       # self.null_fd = os.open(os.devnull, os.O_RDWR)
+       # self.old = os.dup(self.stderr_fd)
+       # os.dup2(self.null_fd, self.stderr_fd)
 
     def __exit__(self, *args, **kwargs):
-        os.dup2(self.old, self.stderr_fd)
-        os.close(self.null_fd)
-        os.close(self.old)
+      pass
+        #os.dup2(self.old, self.stderr_fd)
+        #os.close(self.null_fd)
+        #os.close(self.old)
 
 
 def prepare_image(img, format):
